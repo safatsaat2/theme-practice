@@ -1,7 +1,13 @@
-<?php get_header(); ?>
+<?php 
+/*
+
+Template Name: About Page Template
+
+*/
+ get_header(); ?>
 
 <body <?php body_class(); ?>>
-    <?php get_template_part("hero") ?>
+    <?php get_template_part("hero-page") ?>
 
     <div class="posts">
 
