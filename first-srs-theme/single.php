@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <body <?php body_class(); ?>>
-    <?php get_template_part("hero") ?>
+    <?php get_template_part("/templates-parts/common/hero") ?>
 
     <div class="container">
         <div class="row">
@@ -58,9 +58,16 @@
                                         the_content();
 
 
-                                        next_post_link();
-                                        echo "</br>";
-                                        previous_post_link();
+                                        // next_post_link();
+                                        // echo "</br>";
+                                        // previous_post_link();
+                                        echo '<div class="custom-post-links">';
+                                        echo '<span class="previous-post-link">' . previous_post_link('%link', '&#8592') . '</span>';
+                                        echo '<span class="next-post-link">' . next_post_link('%link', '&#8594') . '</span>';
+                                        // echo '</br>';
+                                        
+                                        echo '</div>';
+
                                         ?>
                                     </div>
                                     <!-- <?php if (comments_open()) { ?>
