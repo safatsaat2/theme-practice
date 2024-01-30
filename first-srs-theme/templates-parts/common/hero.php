@@ -4,12 +4,12 @@
 
         <div class="row">
 
-
+<h2 class="text-2xl text-[#373737] text-center">Hi guys I am from tailwind</h2>
             <div class="col-md-12">
                 <?php
                 if (current_theme_supports("custom-logo")) {
                 ?>
-                    <div class="header-logo text-center">
+                    <div class="header-logo text-center mx-auto ">
                         <?php
                         the_custom_logo();
 

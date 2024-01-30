@@ -5,7 +5,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="posts">
 
                     <?php
@@ -56,7 +56,7 @@
                                         <?php
 
                                         the_content();
-
+                                        wp_link_pages();
 
                                         // next_post_link();
                                         // echo "</br>";
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <?php
                     if (is_active_sidebar("sidebar-1")) {
                         dynamic_sidebar("sidebar-1");

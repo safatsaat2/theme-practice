@@ -6,6 +6,7 @@ if (site_url() == "http://localhost/wordpress") {
 } else {
     define("VERSION", wp_get_theme()->get("Version"));
 };
+// done
 function firstSrsTheme()
 {
     load_theme_textdomain("firstSrsTheme");
@@ -25,9 +26,23 @@ function firstSrsTheme()
         'flex-width'  => true
     );
     add_theme_support("custom-logo", $firstSrsTheme_custom_logo_defaults);
-    add_theme_support("custom-background",);
+    $firstSrsTheme_custom_background_defaults = array(
+        'default-color'          => '000',    // Default background color (hexadecimal value)
+        'default-image'          => '',          // Default background image (URL)
+        'default-repeat'         => 'repeat',    // Default background image repeat property
+        'default-position-x'     => 'left',      // Default background image horizontal position
+        'default-position-y'     => 'top',       // Default background image vertical position
+        'default-size'           => 'auto',      // Default background image size
+        'default-attachment'     => 'scroll',    // Default background image attachment
+        'wp-head-callback'       => '_custom_background_cb',
+        'admin-head-callback'    => '',
+        'admin-preview-callback' => '',
+    );
+    add_theme_support("custom-background", $firstSrsTheme_custom_background_defaults);
     register_nav_menu("topmenu", __("Top Menu", "firstSrsTheme"));
     register_nav_menu("footermenu", __("Footer Menu", "firstSrsTheme"));
+    add_theme_support("post-formats", array("audio", "video", "quote", "image"));
+    // dag kne jinish janar baki
 }
 add_action("after_setup_theme", "firstSrsTheme");
 
@@ -35,7 +50,9 @@ function firstSrsTheme_assets()
 {
     wp_enqueue_style("localStyle", get_stylesheet_uri(), null, VERSION);
     wp_enqueue_style("bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+    
     wp_enqueue_style("featherLight", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css");
+    wp_enqueue_script("tailwind", "//cdn.tailwindcss.com");
     wp_enqueue_script("featherLightJs", "//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js", array("jquery"), "0.0.1", true);
     wp_enqueue_script("localJs", get_template_directory_uri() . '/assets/js/main.js', array("jquery", "featherLightJs"), VERSION, true);
 }
@@ -107,6 +124,10 @@ function firstSrsTheme_menu_item_class($classes, $item)
 
 
 add_filter("nav_menu_css_class", "firstSrsTheme_menu_item_class", 10, 2);
+$width = 200;
+$height = 300;
+
+add_image_size("feature_img", $width, $height, true);
 function firstSrsTheme_about_page_template_banner()
 {
     if (is_page()) {
@@ -146,3 +167,4 @@ function firstSrsTheme_about_page_template_banner()
 
 add_action("wp_head", "firstSrsTheme_about_page_template_banner", 11);
 ?>
+

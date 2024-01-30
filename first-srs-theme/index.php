@@ -9,7 +9,7 @@
             the_post();
         ?>
 
-            <div class="post" <?php post_class(); ?>>
+            <div <?php post_class(); ?>>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -29,6 +29,17 @@
                             <?php echo get_the_tag_list( "<ul class='list-unstyled'>
                                 <li>", "</li><li>", "</li>
                                 </ul>" ); ?>
+                                <?php  $firstSrsTheme_post_format = get_post_format(  );
+                                
+                                if($firstSrsTheme_post_format === "image"){
+                                    echo '<span class="dashicons dashicons-format-image"></span>';
+                                }elseif($firstSrsTheme_post_format === "audio"){
+                                    echo '<span class="dashicons dashicons-format-audio"></span>';
+                                }
+                                elseif($firstSrsTheme_post_format === "video"){
+                                    echo '<span class="dashicons dashicons-video-alt2"></span>';
+                                }
+                                ?>
                         </div>
                         <div class="col-md-8">
                             <p>
@@ -37,14 +48,14 @@
                                
 
                                  if (has_post_thumbnail()) {
-                                     $thumbnail_url = get_the_post_thumbnail_url(null, "large");
+                                     $thumbnail_url = get_the_post_thumbnail_url(null, "feature_img");
 
 
                                      // echo '<a href="'.$thumbnail_url.'" data-featherlight="myimage.png">';
 
 
                                      printf('<a href="%s" data-featherlight="image">', $thumbnail_url);
-                                     the_post_thumbnail("large", "class=>'img-fluid'");
+                                     the_post_thumbnail("feature_img", "class= opacity-1 img-fluid");
                                      echo '</a>';
                                  }
 
@@ -55,7 +66,7 @@
                                 // else{
                                 //     echo get_the_password_form( );
                                 // }
-                                the_excerpt(); 
+                                the_excerpt(array("class=> py-2")); 
                                 
                                 ?>
                             </p>
