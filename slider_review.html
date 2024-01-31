@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link
+      rel="stylesheet"
+      href="/assets/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* card css start  */
+      .srs_card_parent {
+        height: 100%;
+        box-shadow: 0px 1px 2px 1px rgba(50, 71, 92, 0.06),
+          0px 1px 4px 1px rgba(50, 71, 92, 0.04),
+          0px 1px 2px 2px rgba(50, 71, 92, 0.02);
+        background-color: #ffffff;
+        border-radius: 0.5rem;
+        padding: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 34rem;
+        position: relative;
+        z-index: 1;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+      .srs_card_parent:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 71%;
+        width: 55%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-top: 3px dashed;
+        border-color: #002333;
+      }
+      .srs_card_content_parent {
+        position: relative;
+        padding-top: 16px;
+        height: 100%;
+      }
+      .mui-style-2qextn {
+        position: absolute;
+        top: -6%;
+        left: 16px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+      .srs_card_right_border {
+        position: absolute;
+        top: -6%;
+        right: -20px;
+        width: 100%;
+        height: 60%;
+        border-right: 3px dashed;
+        border-color: #002333;
+      }
+      .srs_card_user_img img {
+        width: 100px !important;
+        height: 100px;
+      }
+      .srs_card_user_img {
+        position: absolute;
+        right: 20px;
+        top: -45%;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+      }
+      .srs_card_content_box {
+        position: relative;
+        z-index: 2;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        height: inherit;
+      }
+      .srs_card_star_container {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        position: relative;
+        font-size: 1.5rem;
+        color: #faaf00;
+        cursor: pointer;
+        text-align: left;
+        -webkit-tap-highlight-color: transparent;
+        pointer-events: none;
+        color: #002333;
+      }
+      .srs_card_star_sec_text {
+        margin: 0;
+        font-family: "__Manrope_8fdb38", "__Manrope_Fallback_8fdb38", Helvetica,
+          Poppins, sans-serif;
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1.43;
+        color: #002333;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .mui-style-19idom {
+        margin-bottom: 8px;
+      }
+      .srs_card_second_sec_para {
+        margin: 0;
+        font-family: "__Poppins_7035bd", "__Poppins_Fallback_7035bd", Helvetica,
+          Poppins, sans-serif;
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #3b5662;
+        line-height: 1.5rem;
+      }
+      .srs_card_second_sec_read_more {
+        margin: 0;
+        font-family: "__Poppins_7035bd", "__Poppins_Fallback_7035bd", Helvetica,
+          Poppins, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        color: #3b5662;
+        letter-spacing: 0.009375rem;
+        color: #002333;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+      .srs_card_last_sec {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        gap: 8px;
+      }
+      .srs_card_last_sec_user_name {
+        margin: 0;
+        font-family: "__Poppins_7035bd", "__Poppins_Fallback_7035bd", Helvetica,
+          Poppins, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        color: #3b5662;
+        letter-spacing: 0.009375rem;
+        color: #002333;
+        font-weight: 700;
+      }
+      .srs_card_last_sec_user_title {
+        margin: 0;
+        font-family: "__Poppins_7035bd", "__Poppins_Fallback_7035bd", Helvetica,
+          Poppins, sans-serif;
+        font-size: 0.625rem;
+        font-weight: 400;
+        line-height: 1rem;
+        color: #3b5662;
+      }
+      .srs_card_star {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        fill: currentColor;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-size: inherit;
+      }
+      .srs_card_star_container .MuiRating-iconFilled {
+        color: #ff9800;
+      }
+      .srs_card_quote_icon {
+        position: absolute;
+        top: -16%;
+        left: 0px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+.owl-next,
+.owl-prev{
+    display: flex !important;
+    justify-content: center;
+    align-items: center; 
+
+    border-radius: 50% !important;
+    width: 38px;
+    height: 38px;
+    color: #FFF !important;
+    font-size: 16px !important;
+    margin: 5px;
+
+    background: rgb(0, 35, 51) !important;
+
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+.owl-theme .owl-nav {
+    margin-top: 10px;
+    display:flex;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.owl-carousel, .owl-carousel .owl-item {
+    padding-top: 110px;
+    position: relative;
+}
+      /* card css end  */
+
+      /* card slider css start  */
+      /* .home-demo .item {
+        background: #ff3f4d;
+      }
+      .home-demo h2 {
+        color: #fff;
+        text-align: center;
+        padding: 5rem 0;
+        margin: 0;
+        font-style: italic;
+        font-weight: 300;
+      } */
+      /* card slider css end  */
+    </style>
+  </head>
+  <body>
+    <!-- slider start  -->
+    <div class="home-demo">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="srs_card_parent">
+            <div class="srs_card_content_parent">
+              <div class="srs_card_quote_icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H0V4Z"
+                    fill="#E6FFF3"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334H13.2002C14.2202 16.2334 14.9202 17.0067 14.9202 17.9534V20.1001C14.9202 21.0468 14.2202 21.8201 13.2002 21.8201H11.0535C10.1068 21.8201 9.3335 21.0468 9.3335 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334C9.3335 12.2001 10.0868 11.5334 12.3535 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334H20.9536C21.9736 16.2334 22.6736 17.0067 22.6736 17.9534V20.1001C22.6736 21.0468 21.9736 21.8201 20.9536 21.8201H18.8069C17.8603 21.8201 17.0869 21.0468 17.0869 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334C17.0869 12.2001 17.8402 11.5334 20.1069 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div class="srs_card_right_border"></div>
+              <div class="srs_card_user_img">
+                <img
+                  alt="avatar"
+                  src="https://adamsfcstg.wpenginepowered.com/wp-content/uploads/2023/12/Martin-1.png"
+                  width="100"
+                  height="100"
+                  decoding="async"
+                  data-nimg="1"
+                  loading="lazy"
+                  style="color: transparent; object-fit: cover"
+                />
+              </div>
+              <div class="srs_card_content_box">
+                <div class="srs_card_content_first_sec">
+                  <span
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly srs_card_star_container"
+                    role="img"
+                    aria-label="5 Stars"
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                  ></span>
+                  <h6
+                    class="MuiTypography-root MuiTypography-subtitle2 srs_card_star_sec_text"
+                  >
+                    Easy to Learn Course and All in One
+                  </h6>
+                  <div class="mui-style-19idom">
+                    <p
+                      class="MuiTypography-root MuiTypography-body2 srs_card_second_sec_para"
+                    >
+                      'Wedding Planning' was fun and exciting. Learned how to
+                      photograph priceless family moments like a pro and arrange
+                      food that everyone likes.<span
+                        class="MuiTypography-root MuiTypography-body1 srs_card_second_sec_read_more"
+                        >Read More</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="srs_card_last_sec">
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 srs_card_last_sec_user_name"
+                  >
+                    Patricia —
+                  </p>
+                  <span
+                    class="MuiTypography-root MuiTypography-overline srs_card_last_sec_user_title"
+                    >Student and Photography Enthusiast</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="srs_card_parent">
+            <div class="srs_card_content_parent">
+              <div class="srs_card_quote_icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H0V4Z"
+                    fill="#E6FFF3"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334H13.2002C14.2202 16.2334 14.9202 17.0067 14.9202 17.9534V20.1001C14.9202 21.0468 14.2202 21.8201 13.2002 21.8201H11.0535C10.1068 21.8201 9.3335 21.0468 9.3335 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334C9.3335 12.2001 10.0868 11.5334 12.3535 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334H20.9536C21.9736 16.2334 22.6736 17.0067 22.6736 17.9534V20.1001C22.6736 21.0468 21.9736 21.8201 20.9536 21.8201H18.8069C17.8603 21.8201 17.0869 21.0468 17.0869 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334C17.0869 12.2001 17.8402 11.5334 20.1069 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div class="srs_card_right_border"></div>
+              <div class="srs_card_user_img">
+                <img
+                  alt="avatar"
+                  src="https://adamsfcstg.wpenginepowered.com/wp-content/uploads/2023/12/Martin-1.png"
+                  width="100"
+                  height="100"
+                  decoding="async"
+                  data-nimg="1"
+                  loading="lazy"
+                  style="color: transparent; object-fit: cover"
+                />
+              </div>
+              <div class="srs_card_content_box">
+                <div class="srs_card_content_first_sec">
+                  <span
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly srs_card_star_container"
+                    role="img"
+                    aria-label="5 Stars"
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                  ></span>
+                  <h6
+                    class="MuiTypography-root MuiTypography-subtitle2 srs_card_star_sec_text"
+                  >
+                    Easy to Learn Course and All in One
+                  </h6>
+                  <div class="mui-style-19idom">
+                    <p
+                      class="MuiTypography-root MuiTypography-body2 srs_card_second_sec_para"
+                    >
+                      'Wedding Planning' was fun and exciting. Learned how to
+                      photograph priceless family moments like a pro and arrange
+                      food that everyone likes.<span
+                        class="MuiTypography-root MuiTypography-body1 srs_card_second_sec_read_more"
+                        >Read More</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="srs_card_last_sec">
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 srs_card_last_sec_user_name"
+                  >
+                    Patricia —
+                  </p>
+                  <span
+                    class="MuiTypography-root MuiTypography-overline srs_card_last_sec_user_title"
+                    >Student and Photography Enthusiast</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="srs_card_parent">
+            <div class="srs_card_content_parent">
+              <div class="srs_card_quote_icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H0V4Z"
+                    fill="#E6FFF3"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334H13.2002C14.2202 16.2334 14.9202 17.0067 14.9202 17.9534V20.1001C14.9202 21.0468 14.2202 21.8201 13.2002 21.8201H11.0535C10.1068 21.8201 9.3335 21.0468 9.3335 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334C9.3335 12.2001 10.0868 11.5334 12.3535 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334H20.9536C21.9736 16.2334 22.6736 17.0067 22.6736 17.9534V20.1001C22.6736 21.0468 21.9736 21.8201 20.9536 21.8201H18.8069C17.8603 21.8201 17.0869 21.0468 17.0869 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334C17.0869 12.2001 17.8402 11.5334 20.1069 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div class="srs_card_right_border"></div>
+              <div class="srs_card_user_img">
+                <img
+                  alt="avatar"
+                  src="https://adamsfcstg.wpenginepowered.com/wp-content/uploads/2023/12/Martin-1.png"
+                  width="100"
+                  height="100"
+                  decoding="async"
+                  data-nimg="1"
+                  loading="lazy"
+                  style="color: transparent; object-fit: cover"
+                />
+              </div>
+              <div class="srs_card_content_box">
+                <div class="srs_card_content_first_sec">
+                  <span
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly srs_card_star_container"
+                    role="img"
+                    aria-label="5 Stars"
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                  ></span>
+                  <h6
+                    class="MuiTypography-root MuiTypography-subtitle2 srs_card_star_sec_text"
+                  >
+                    Easy to Learn Course and All in One
+                  </h6>
+                  <div class="mui-style-19idom">
+                    <p
+                      class="MuiTypography-root MuiTypography-body2 srs_card_second_sec_para"
+                    >
+                      'Wedding Planning' was fun and exciting. Learned how to
+                      photograph priceless family moments like a pro and arrange
+                      food that everyone likes.<span
+                        class="MuiTypography-root MuiTypography-body1 srs_card_second_sec_read_more"
+                        >Read More</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="srs_card_last_sec">
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 srs_card_last_sec_user_name"
+                  >
+                    Patricia —
+                  </p>
+                  <span
+                    class="MuiTypography-root MuiTypography-overline srs_card_last_sec_user_title"
+                    >Student and Photography Enthusiast</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="srs_card_parent">
+            <div class="srs_card_content_parent">
+              <div class="srs_card_quote_icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H0V4Z"
+                    fill="#E6FFF3"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334H13.2002C14.2202 16.2334 14.9202 17.0067 14.9202 17.9534V20.1001C14.9202 21.0468 14.2202 21.8201 13.2002 21.8201H11.0535C10.1068 21.8201 9.3335 21.0468 9.3335 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334C9.3335 12.2001 10.0868 11.5334 12.3535 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334H20.9536C21.9736 16.2334 22.6736 17.0067 22.6736 17.9534V20.1001C22.6736 21.0468 21.9736 21.8201 20.9536 21.8201H18.8069C17.8603 21.8201 17.0869 21.0468 17.0869 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334C17.0869 12.2001 17.8402 11.5334 20.1069 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div class="srs_card_right_border"></div>
+              <div class="srs_card_user_img">
+                <img
+                  alt="avatar"
+                  src="https://adamsfcstg.wpenginepowered.com/wp-content/uploads/2023/12/Martin-1.png"
+                  width="100"
+                  height="100"
+                  decoding="async"
+                  data-nimg="1"
+                  loading="lazy"
+                  style="color: transparent; object-fit: cover"
+                />
+              </div>
+              <div class="srs_card_content_box">
+                <div class="srs_card_content_first_sec">
+                  <span
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly srs_card_star_container"
+                    role="img"
+                    aria-label="5 Stars"
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                  ></span>
+                  <h6
+                    class="MuiTypography-root MuiTypography-subtitle2 srs_card_star_sec_text"
+                  >
+                    Easy to Learn Course and All in One
+                  </h6>
+                  <div class="mui-style-19idom">
+                    <p
+                      class="MuiTypography-root MuiTypography-body2 srs_card_second_sec_para"
+                    >
+                      'Wedding Planning' was fun and exciting. Learned how to
+                      photograph priceless family moments like a pro and arrange
+                      food that everyone likes.<span
+                        class="MuiTypography-root MuiTypography-body1 srs_card_second_sec_read_more"
+                        >Read More</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="srs_card_last_sec">
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 srs_card_last_sec_user_name"
+                  >
+                    Patricia —
+                  </p>
+                  <span
+                    class="MuiTypography-root MuiTypography-overline srs_card_last_sec_user_title"
+                    >Student and Photography Enthusiast</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="srs_card_parent">
+            <div class="srs_card_content_parent">
+              <div class="srs_card_quote_icon">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H0V4Z"
+                    fill="#E6FFF3"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334H13.2002C14.2202 16.2334 14.9202 17.0067 14.9202 17.9534V20.1001C14.9202 21.0468 14.2202 21.8201 13.2002 21.8201H11.0535C10.1068 21.8201 9.3335 21.0468 9.3335 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M9.3335 16.2334C9.3335 12.2001 10.0868 11.5334 12.3535 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334H20.9536C21.9736 16.2334 22.6736 17.0067 22.6736 17.9534V20.1001C22.6736 21.0468 21.9736 21.8201 20.9536 21.8201H18.8069C17.8603 21.8201 17.0869 21.0468 17.0869 20.1001V16.2334"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M17.0869 16.2334C17.0869 12.2001 17.8402 11.5334 20.1069 10.1868"
+                    stroke="#00ff84"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div class="srs_card_right_border"></div>
+              <div class="srs_card_user_img">
+                <img
+                  alt="avatar"
+                  src="https://adamsfcstg.wpenginepowered.com/wp-content/uploads/2023/12/Martin-1.png"
+                  width="100"
+                  height="100"
+                  decoding="async"
+                  data-nimg="1"
+                  loading="lazy"
+                  style="color: transparent; object-fit: cover"
+                />
+              </div>
+              <div class="srs_card_content_box">
+                <div class="srs_card_content_first_sec">
+                  <span
+                    class="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly srs_card_star_container"
+                    role="img"
+                    aria-label="5 Stars"
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                    ><span
+                      ><span
+                        class="MuiRating-icon MuiRating-iconFilled mui-style-13m1if9"
+                        ><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit srs_card_star"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="StarIcon"
+                        >
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                          ></path></svg></span></span
+                  ></span>
+                  <h6
+                    class="MuiTypography-root MuiTypography-subtitle2 srs_card_star_sec_text"
+                  >
+                    Easy to Learn Course and All in One
+                  </h6>
+                  <div class="mui-style-19idom">
+                    <p
+                      class="MuiTypography-root MuiTypography-body2 srs_card_second_sec_para"
+                    >
+                      'Wedding Planning' was fun and exciting. Learned how to
+                      photograph priceless family moments like a pro and arrange
+                      food that everyone likes.<span
+                        class="MuiTypography-root MuiTypography-body1 srs_card_second_sec_read_more"
+                        >Read More</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="srs_card_last_sec">
+                  <p
+                    class="MuiTypography-root MuiTypography-body1 srs_card_last_sec_user_name"
+                  >
+                    Patricia —
+                  </p>
+                  <span
+                    class="MuiTypography-root MuiTypography-overline srs_card_last_sec_user_title"
+                    >Student and Photography Enthusiast</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- slider end  -->
+
+    <!-- slider js all  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script>
+      $(function () {
+        // Owl Carousel
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+          items: 3,
+          margin: 10,
+          loop: true,
+          nav: true,
+          dots: false,
+          navText: [
+            "<i aria-hidden='true' class='fas fa-chevron-left'></i>",
+            "<i aria-hidden='true' class='fas fa-chevron-right'></i>",
+            
+          ],
+          responsive: {
+            0: {
+              items: 1,
+            },
+
+            600: {
+              items: 3,
+            },
+
+            1024: {
+              items: 2,
+            },
+
+            1366: {
+              items: 2,
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

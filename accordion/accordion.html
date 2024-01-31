@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <!-- google fonts here  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .srs_accordion-section {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    .srs-accordion__list {
+      margin-top: 80px;
+      border-radius: 8px;
+    }
+
+    .srs-accordion {
+      border-radius: 4px;
+    }
+
+    .srs-accordion_head {
+      min-height: 48px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s all;
+      background-color: rgba(0, 0, 0, 0.03);
+      border: 0.5px solid #b1b2b4;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .srs-accordion__title {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
+      line-height: 24px;
+      color: #002333;
+      font-weight: 500;
+      text-align: center;
+      width: -webkit-fill-available;
+    }
+
+    .srs_icon_box {
+      width: 56px;
+      height: 48px;
+      padding: 18px;
+      background: #b1b2b4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .srs-acc_item {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #3b5662;
+    }
+
+    .srs-accordion__content-wrap {
+      overflow: hidden;
+      transition: 0.2s all ease-in-out;
+    }
+
+    .srs-accordion__content {
+      padding: 16px;
+    }
+
+    .srs-accordion__active {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 35, 51);
+      box-shadow: rgba(50, 71, 92, 0.06) 0px 2px 9px,
+        rgba(50, 71, 92, 0.04) 0px 4px 9px 1px,
+        rgba(50, 71, 92, 0.02) 0px 2px 6px 4px;
+      position: relative;
+      margin-bottom: 16px;
+      border: 1px solid rgb(0, 35, 51);
+      border-radius: 4px;
+    }
+
+    .srs-accordion__active .srs-accordion_head {
+      border: 0;
+      margin-bottom: 0;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .srs-accordion__active .srs_icon_box {
+      background: rgb(0, 35, 51);
+    }
+
+    .srs-accordion__active .srs-accordion__content-wrap {
+      display: block;
+      height: auto;
+      max-height: 1000px;
+    }
+
+    .srs-accordion__active .srs-arrow {
+      transform: rotate(-135deg);
+    }
+
+    .srs-arrow {
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: translateY(-50%) rotate(45deg);
+      transition: 0.2s;
+    }
+  </style>
+
+  <body>
+    <!-- srs custom accordion start  -->
+    <div class="srs_accordion-section">
+      <div class="srs-accordion__list">
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title"> What is Adams Academy? </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                Adams Academy is a global online platform offering free
+                professional and personal development courses. Our mission is to
+                make education accessible and help people reach their full
+                potential.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              Are the courses really free?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                Yes! All of our courses are entirely free to access and take.
+                There are no hidden fees or charges.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              What kinds of courses are available?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                Adams Academy offers various courses in various categories,
+                including business, technology, language, health, arts and
+                culture, and more. We strive to provide courses that meet the
+                needs and interests of our global community of learners.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              Can I earn certificates or degrees through Adams Academy?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                Currently, we do offer certificates. Moreover, our courses can
+                help learners develop new skills and knowledge that can be
+                applied to their personal or professional lives.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              How can I join the Adams Academy community?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                Joining the Adams Academy community is easy! Simply create an
+                account on our website and start exploring our courses. You can
+                also connect with other learners in our learning platform and
+                join our social media channels to stay up-to-date on our latest
+                news and updates.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              How long does it take to complete a course?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                The length of time it takes to complete a course varies
+                depending on the course's complexity and your pace of learning.
+                Our courses are designed to be self-paced, allowing you to learn
+                at your speed and on your schedule.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              How can I access Adams Academy courses?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                All of our courses are accessible through our website. Simply
+                create an account, browse our course catalogue, and select the
+                course(s) you want to take. Once enrolled, you can access the
+                course materials and begin learning immediately.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              Who teaches the courses at Adams Academy?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                Our courses are created by a diverse group of educators and
+                experts worldwide. We carefully curate our instructors to ensure
+                our courses are engaging and informative and provide valuable
+                insights to our learners.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- single accordion  -->
+        <div class="srs-accordion">
+          <div class="srs-accordion_head">
+            <span class="srs-accordion__title">
+              How can I give feedback or suggestions to Adams Academy?
+            </span>
+            <div class="srs_icon_box">
+              <span class="srs-arrow"></span>
+            </div>
+          </div>
+          <div class="srs-accordion__content-wrap">
+            <div class="srs-accordion__content">
+              <p class="srs-acc_item">
+                We value feedback and suggestions from our users and are always
+                looking for ways to improve our platform. You can contact us
+                through our website's contact form or at [email address]. We
+                appreciate all feedback and suggestions that can help us improve
+                the Adams Academy learning experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- srs custom accordion end  -->
+
+    <!-- srs custom accordion js  -->
+    <script>
+      function handleClass(node, className, action = "add") {
+        node.classList[action](className);
+      }
+
+      const accordions = document.querySelectorAll(".srs-accordion");
+
+      accordions.forEach(function (accordion) {
+        const heading = accordion.querySelector(".srs-accordion_head");
+        const accordionContentWrap = accordion.querySelector(
+          ".srs-accordion__content-wrap"
+        );
+        const originalHeight = accordionContentWrap.offsetHeight;
+        accordionContentWrap.style.height = 0;
+
+        let accordionActiveClass = "srs-accordion__active";
+
+        heading.addEventListener("click", function () {
+          if (this.parentNode.classList.contains(accordionActiveClass)) {
+            handleClass(this.parentNode, accordionActiveClass, "remove");
+            accordionContentWrap.style.height = 0 + "px";
+          } else {
+            handleClass(this.parentNode, accordionActiveClass);
+            accordionContentWrap.style.height = originalHeight + "px";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
