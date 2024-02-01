@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Card</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      .srs_card_parent_follow{
+        max-width: 211px;
+        margin: 0 auto;
+      }
+      .srs_card_parent_follow .srs_img_container{
+    background: #000;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    
+}
+.srs_card_parent_follow .srs_img_container:hover > img{
+    opacity: .9 !important;
+}
+
+
+.srs_card_parent_follow .srs_content_card .srs_content_first_sec:hover img{
+    border:1px solid #f02d00;
+}
+.srs_card_parent_follow .srs_content_card .srs_content_first_sec:hover .srs_teacher_details h6{
+    color: #f02d00;
+}
+
+
+
+      .srs_card_parent_follow .srs_content_card{
+        padding: 0 15px 15px 15px;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_first_sec{
+        margin-top: -50px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: relative;
+        z-index: 4;
+        text-decoration: none;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_first_sec img{
+        border-radius: 50%;
+        border: 1px solid #fff;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_first_sec .srs_tag_div{
+        background: #00b2bd;
+        font-family: "Roboto", sans-serif;
+        font-size: 11px;
+        line-height: 19px;
+        font-weight: 500;
+        color: #fff;
+        display: inline-block;
+        padding:0  5px;
+        border-radius: 3px;
+        margin-left: 6px;
+        margin-top: -16px;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_first_sec .srs_teacher_details h6{
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #161616;
+        margin: 4px 0;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_first_sec .srs_teacher_details p, .srs_content_second_sec p{
+        font-family: "Roboto", sans-serif;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 400;
+        color: #848484;
+;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_second_sec{
+        margin-top: 30px;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_second_sec a{
+        background: #848484;
+        border-radius: 4px;
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 8px;
+      }
+      .srs_card_parent_follow .srs_content_card .srs_content_second_sec a p{
+        font-family: "Roboto", sans-serif;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 400;
+        color: #fff;
+        padding: 4px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="srs_card_parent_follow">
+      <a href="#" class="srs_img_container">
+        <img
+          src="https://educave.org.uk/wp-content/uploads/2024/02/505483-original.webp"
+          alt=""
+        />
+      </a>
+      <div class="srs_content_card">
+        <a href="#" class="srs_content_first_sec">
+          <img src="https://educave.org.uk/wp-content/uploads/2024/02/162727-original.webp" alt="">
+          <div class="srs_tag_div">
+            <p>TEACHER</p>
+          </div>
+          <div class="srs_teacher_details">
+            <h6>
+                Chisko Romo</h6>
+                <p>Guadalajara, Mexico</p>
+          </div>
+        </a>
+
+        <div class="srs_content_second_sec">
+         <p>3733 followers</p>
+         <a href="#">
+            <i aria-hidden="true" class="fas fa-plus"></i>
+            <p>Follow</p>
+        </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

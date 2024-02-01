@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Card</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .srs_card_parent{
+            max-width:280px;
+
+        }
+.srs_card_parent .srs_img_container{
+    background: #000;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    
+}
+.srs_card_parent .srs_img_container:hover > img{
+    opacity: .7 !important;
+}
+.srs_card_parent .srs_img_container .srs_play_btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    transform: translate(-50%,-50%);
+    background-color: rgba(22,22,22,.6);
+    border-radius: 50%;
+    z-index: 999;
+    
+}
+.srs_card_parent .srs_img_container .srs_tag_div{
+    display: inline;
+    position: absolute;
+    font-family: "Roboto",sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #161616;
+    background: #ffd100 ;
+    padding: 0 4px;
+    text-decoration: none;
+    top: 8px;
+    left: 8px;
+    border-radius: 2px;
+    z-index: 1;
+}
+.srs_card_parent .srs_img_container img{
+    height: 100% ;
+}
+.srs_card_parent .srs_content_card{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.srs_card_parent .srs_content_card .srs_content_first_sec{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.srs_card_parent .srs_content_card .srs_content_second_sec{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.srs_card_parent .srs_content_card .srs_header_text a{
+    font-family: "Roboto",sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    color: #161616;
+}
+.srs_card_parent .srs_content_card .srs_header_text a:hover{
+    color: #f02d00;
+}
+.srs_card_parent .srs_content_card .srs_teacher_text{
+    font-family: "Roboto",sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    color: #161616;
+}
+.srs_card_parent .srs_content_card .srs_course_details{
+    font-family: "Roboto",sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    color: #848484;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+.srs_card_parent .srs_content_card .srs_user_like_div{
+    font-family: "Roboto",sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    color: #848484;
+    display: flex;
+    column-gap: 8px;
+    margin-top: 32px;
+}
+.srs_card_parent .srs_content_card .srs_price_sec h6{
+    font-family: "Roboto",sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    color: #f02d00;
+    display: flex;
+    column-gap: 8px;
+}
+.srs_card_parent .srs_content_card .srs_price_sec h6 span{
+    font-weight: 600;
+    text-decoration: line-through;
+}
+.srs_card_parent .srs_content_card .srs_price_sec a{
+    background-color: #00b2bd;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 12px 0;
+    border-radius: 4px;
+    font-family: "Roboto",sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="srs_card_parent">
+        <a href="#" class="srs_img_container">
+            <div class="srs_play_btn">
+                <i aria-hidden="true" class="fas fa-play"></i>
+            </div>
+            <div class="srs_tag_div">
+                Best Seller
+            </div>
+            <img src="https://educave.org.uk/wp-content/uploads/2024/02/2373-original.jpg" alt=""/>
+        </a>
+        <div class="srs_content_card">
+            <div class="srs_content_first_sec">
+                <h6 class="srs_header_text"><a href="#">Creative Watercolor Sketching for Beginners</a></h6>
+            <p class="srs_teacher_text">A course by Laura McKendry</p>
+            <p class="srs_course_details">
+                Paint exciting watercolor illustrations by exploring playful and unconventional techniques in your sketchbook</p>
+            </div>
+
+                <div class="srs_content_second_sec">
+                    <div class="srs_user_like_div">
+                        <div class="srs_user_div">
+                            <i aria-hidden="true" class="far fa-user"></i>
+                            <p>76168</p>
+                        </div>
+                        <div class="srs_like_div">
+                            <i aria-hidden="true" class="far fa-thumbs-up"></i>
+                            <p>100%</p>
+                        </div>
+                        <p>(2k)</p>
+                    </div>
+    
+                    <div class="srs_price_sec">
+                        <h6>88% Disc. <span>$59.99 USD</span></h6>
+                        <a href="#"><i aria-hidden="true" class="fas fa-shopping-cart"></i> Buy $6.99 USD</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
