@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      .srs_course_card {
+        border: 1px solid #d5d4d4;
+        max-width: 255px;
+      }
+      .srs_course_card .srs_img_wrapper img {
+        width: 100%;
+      }
+      .srs_course_card .srs_img_wrapper {
+        position: relative;
+      }
+      .srs_course_card .srs_content_wrapper {
+        padding: 16px 9px 16px 16px;
+      }
+      .srs_course_card .srs_img_wrapper .srs_timing {
+        position: absolute;
+        background: #ffffff9e;
+        padding: 4px 8px;
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        border-radius: 4px;
+        right: 7px;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #222221;
+      }
+
+      .srs_course_card .srs_content_wrapper .srs_tag {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #222221;
+      }
+      .srs_course_card .srs_content_wrapper .srs_name {
+        font-family: "Inter", sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        color: #222221;
+        margin-top: 4px;
+      }
+      .srs_course_card .srs_content_wrapper .srs_brand {
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0.23999999463558197px;
+        text-align: left;
+
+        color: #807f7f;
+        margin-top: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="srs_course_card">
+      <div class="srs_img_wrapper">
+        <img
+          src="https://uk.hfonline.org/wp-content/uploads/2024/02/Fire-Awareness-Training-cover.jpg-1.webp"
+          alt=""
+        />
+        <div class="srs_timing">
+          <i aria-hidden="true" class="far fa-clock"></i>
+          30 mins
+        </div>
+      </div>
+      <div class="srs_content_wrapper">
+        <h5 class="srs_tag">Health & Safety</h5>
+        <h5 class="srs_name">Fire Awareness Training</h5>
+        <h5 class="srs_brand">CPD, IIRSM, IOSH, RoSPA, Skills For Care</h5>
+      </div>
+    </div>
+  </body>
+</html>
