@@ -16,7 +16,7 @@ Template Name: About Page Template
             the_post();
         ?>
 
-            <div class="post" <?php post_class(); ?>>
+            <div <?php post_class(); ?>>
                 <div class="">
                     <div class="row">
                         <div class="col-md-10 mx-auto">
@@ -37,6 +37,7 @@ Template Name: About Page Template
                     <?php echo get_the_tag_list("<ul class='list-unstyled'>
                         <li>", "</li><li>", "</li>
                         </ul>"); ?>
+                        
                 </div> -->
                         <div class="col-md-10 mx-auto">
                             <p>
