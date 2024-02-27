@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* 
+$content-width will be the max width of the content within the navigation bar. 
+$breakpoint determines at which width the media query breakpoint will take effect.
+*/
+
+
+.srs_cs_nav nav {
+  float: right;
+}
+.srs_cs_nav nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.srs_cs_nav nav ul li {
+  float: left;
+  position: relative;
+}
+.srs_cs_nav nav ul li a {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #ffffff;
+  color: #463f3f;
+  text-decoration: none;
+  /*
+  The full path of this code is nav ul li a:not(:only-child):after. This means that the code will apply to any a tag in our nav list that is NOT an only child, aka any dropdown. The :after means it comes after the output of the tag. I’ve decided that to specify any nav item as a dropdown, it will be followed by a unicode arrow – ▾ (#9662).
+  */
+}
+.srs_cs_nav nav ul li a:hover {
+  background: #f2f2f2;
+  color: #fb5958;
+}
+.srs_cs_nav nav ul li a:not(:only-child):after {
+  padding-left: 4px;
+  content: ' ▾';
+}
+.srs_cs_nav nav ul li ul li {
+  min-width: 190px;
+}
+.srs_cs_nav nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.srs_cs_nav .nav-dropdown {
+  position: absolute;
+  z-index: 1;
+  /* Guarantees that the dropdown will display on top of any content. */
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.srs_cs_nav .nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 800px) {
+ .srs_cs_nav  .nav-mobile {
+    display: block;
+  }
+
+.srs_cs_nav   nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+ .srs_cs_nav  nav ul {
+    display: none;
+  }
+ .srs_cs_nav  nav ul li {
+    float: none;
+  }
+ .srs_cs_nav  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+ .srs_cs_nav  nav ul li ul li a {
+    padding-left: 30px;
+  }
+}
+.srs_cs_nav #nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+.srs_cs_nav #nav-toggle span,
+.srs_cs_nav #nav-toggle span:before,
+.srs_cs_nav #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #463f3f;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+.srs_cs_nav #nav-toggle span:before {
+  top: -10px;
+}
+.srs_cs_nav #nav-toggle span:after {
+  bottom: -10px;
+}
+.srs_cs_nav #nav-toggle.active span {
+  background-color: transparent;
+}
+.srs_cs_nav #nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+.srs_cs_nav #nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+.srs_cs_nav #nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 800px) {
+ .srs_cs_nav  .nav-list {
+    display: block !important;
+  }
+}
+/* 
+.navigation – the outer wrapper for the navbar. Specifies the height and color, and will stretch the full width of the viewport.
+*/
+.srs_cs_nav .navigation {
+  height: 70px;
+  background: #ffffff;
+}
+
+/*
+.nav-container – the inner wrapper for the navbar. Defines how far the actual content should stretch.
+*/
+.srs_cs_nav .nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.srs_cs_nav .brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.srs_cs_nav .brand a,
+.srs_cs_nav .brand a:visited {
+  color: #463f3f;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+
+  
+}

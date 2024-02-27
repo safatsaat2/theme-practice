@@ -1,0 +1,216 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.srs_hero_sec{
+    background-image: url("/assets/BG_hero.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width:1024px) and (min-width:768px){
+    .srs_hero_sec{
+        background-position: right center;
+    }
+}
+.srs_hero_sec .srs_content_pr{
+    max-width:662px;
+    margin: 0 auto;
+    padding: 105px 10px 118px 10px;
+}
+
+.srs_hero_sec .srs_content_pr .srs_sub_heading{
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 500;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: center;
+color: #FFFFFF;
+}
+
+.srs_hero_sec .srs_content_pr .srs_heading{
+    font-family: "Inter", sans-serif;
+font-size: 48px;
+font-weight: 600;
+line-height: 77px;
+letter-spacing: 0em;
+text-align: center;
+color: #F5A033;
+/* padding-top: 24px; */
+}
+.srs_hero_sec .srs_content_pr .srs_des{
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 600;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: center;
+/* padding-top: 32px; */
+color: #FFFFFF;
+}
+@media (max-width:767px){
+    .srs_hero_sec .srs_content_pr .srs_sub_heading{
+        font-size: 12px;
+    }
+    .srs_hero_sec .srs_content_pr .srs_heading{
+        font-size: 32px;
+    }
+    .srs_hero_sec .srs_content_pr .srs_des{
+        font-size: 12px;
+    }
+}
+
+.srs_bundle_course_sec{
+    padding: 53px 0 61px 0;
+}
+.srs_bundle_course_sec .srs_cards_parent{
+max-width: 1248.68px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 17px;
+justify-content: center;
+}
+@media (max-width:1024px) {
+    .srs_bundle_course_sec .srs_cards_parent{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width:768px){
+    .srs_bundle_course_sec .srs_cards_parent{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+.srs_bundle_course_sec .srs_card_pr{
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 5px;
+    border: 1px solid #EEEEEE;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_img_wrapper{
+    position: relative;
+    height:165px;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_img_wrapper .srs_star_wrapper{
+    display: flex;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_img_wrapper img{
+    max-width: 
+100%;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_img_wrapper::after{
+    z-index: 4;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    display: block;
+    content: "";
+    height: 100%;
+    background: linear-gradient(354.04deg, rgba(1, 23, 36, 0.8) 8.6%, rgba(0, 0, 0, 0) 65.25%);
+}
+.srs_bundle_course_sec .srs_card_pr .srs_img_wrapper .srs_img_under{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:5;
+    position: absolute;
+    bottom: 8px;
+    padding-right: 10px;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_img_wrapper .srs_sev_course_wraper{
+     background: linear-gradient(90deg, #8FA05D 0%, rgba(143, 160, 93, 0) 137.2%);
+     padding: 8px 5px;
+    
+}
+.srs_bundle_course_sec .srs_card_pr .srs_img_wrapper .srs_sev_course_wraper p{
+    font-family: "Inter", sans-serif;
+font-size: 14px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+color: #fff;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_content_wrapper .srs_title a{
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2B354E;
+    text-decoration: none;
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    height: 61px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_content_wrapper .srs_tag{
+    border-top: 1px solid #EDEDED;
+    padding: 12px 0px 4px 10px;
+}
+
+.srs_bundle_course_sec .srs_card_pr .srs_content_wrapper .srs_tag li{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    list-style-type: none;
+    font-family: "Inter", sans-serif;
+font-size: 12px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+padding-bottom: 8px;
+color: #2B354E;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_price_wrapper{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 8px;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_price_wrapper .srs_price{
+    display:flex;
+    align-items: center;
+    gap:2px;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_price_wrapper .srs_price del{
+    font-family: "Inter", sans-serif;
+font-size: 14px;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: right;
+color: #B1B1B1;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_price_wrapper .srs_price p{
+    font-family: "Inter", sans-serif;
+font-size: 21px;
+font-weight: 700;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: right;
+
+color: #8FA05D;
+}
+.srs_bundle_course_sec .srs_card_pr .srs_price_wrapper .srs_btn a{
+    font-family: "Nunito Sans", sans-serif;
+font-size: 12px;
+font-weight: 600;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+color: #fff;
+background: #F5A033;
+text-decoration: none;
+padding: 10px 14px;
+}

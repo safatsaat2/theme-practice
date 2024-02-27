@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Nav</title>
+    <style>
+        body{
+            background: rgb(253, 158, 158);
+        }
+        .srs_top_nav_pr_main{
+            border-bottom: 1px solid #fff;
+        }
+        .srs_top_nav_pr{
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .srs_top_nav_pr .srs_contact_sec{
+            display: flex;
+        }
+        .srs_top_nav_pr .srs_contact_sec div{
+display: flex;
+gap: 12px;
+        }
+        .srs_top_nav_pr .srs_contact_sec div:first-child{
+            border-right: 1px solid #fff;
+            padding-right: 32px;
+        }
+        .srs_top_nav_pr .srs_contact_sec div:last-child{
+           
+            padding-left: 32px;
+        }
+        .srs_top_nav_pr .srs_contact_sec div p{
+        color: #252847;    
+font-family: "Roboto", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+
+        }
+        .srs_top_nav_pr_main .srs_top_nav_pr .srs_social_media_sec{
+            display: flex;
+            align-items: center;
+            gap:8px
+        }
+        .srs_top_nav_pr_main .srs_top_nav_pr .srs_social_media_sec > p{
+            color: #252847;    
+font-family: "Roboto", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+        }
+        .srs_top_nav_pr_main .srs_top_nav_pr .srs_social_media_sec .srs_social_div{
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            height: 100%;
+        }
+        .srs_top_nav_pr_main .srs_top_nav_pr .srs_social_media_sec .srs_social_div div{
+            display: flex ;
+            align-items: center;
+            padding: 0 16px;
+            border-right:1px solid #fff;
+        }
+        
+        .srs_top_nav_pr_main .srs_top_nav_pr .srs_social_media_sec .srs_social_div div:last-child{
+            border-right: none;
+        }
+        @media (max-width: 768px) {
+            .srs_top_nav_pr{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            }
+            .srs_top_nav_pr .srs_contact_sec div p{
+                font-size: 12px;
+            }
+            .srs_top_nav_pr .srs_contact_sec div img{
+                width: 20px;
+            }
+            .srs_top_nav_pr .srs_contact_sec div:first-child{
+                padding-right: 20px;
+            }
+            .srs_top_nav_pr .srs_contact_sec div:last-child{
+                padding-left: 20px;
+            }
+            .srs_top_nav_pr_main .srs_top_nav_pr .srs_social_media_sec > p{
+                font-size: 12px;
+            }
+}
+    </style>
+</head>
+<body>
+    <div class="srs_top_nav_pr_main">
+        <div class="srs_top_nav_pr">
+
+            <div class="srs_contact_sec">
+    
+                <div>
+                    <img src="https://www.oneeducation.org.uk/wp-content/uploads/2024/02/call-calling.svg" alt="">
+                    <p>
+                        020 3890 6420
+                    </p>
+                </div>
+                <div>
+                    <img src="https://www.oneeducation.org.uk/wp-content/uploads/2024/02/sms.svg" alt="">
+                    <p>
+                        info@oneeducation.org.uk
+                    </p>
+                </div>
+    
+    
+            </div>
+            <div class="srs_social_media_sec">
+    <p>
+        Find us on :
+    </p>
+    <div class="srs_social_div">
+        <div>
+            <a href="#">
+                <img src="https://www.oneeducation.org.uk/wp-content/uploads/2024/02/Facebook-1.svg" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <img src="https://www.oneeducation.org.uk/wp-content/uploads/2024/02/Twitter.svg" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <img src="https://www.oneeducation.org.uk/wp-content/uploads/2024/02/Linkedin.svg" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <img src="https://www.oneeducation.org.uk/wp-content/uploads/2024/02/Instagram.svg" alt="">
+            </a>
+        </div>
+    </div>
+            </div>
+    
+        </div>
+    </div>
+    
+</body>
+</html>

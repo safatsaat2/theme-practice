@@ -1,0 +1,292 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+.srs_hero_sec{
+    background-image: url("/assets/hero_bg.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 83px 0 105px 0;
+}
+.srs_hero_sec .srs_hero_content{
+    max-width: 615px;
+    margin: 0 auto;
+}
+.srs_hero_sec .srs_hero_content .srs_title{
+    font-family: "Outfit", sans-serif;
+font-size: 48px;
+font-weight: 600;
+line-height: 77px;
+letter-spacing: 0em;
+text-align: center;
+color: #2B354E;
+}
+@media (max-width:767px){
+    .srs_hero_sec .srs_hero_content .srs_title{
+        font-size: 32px;
+        line-height: 42px;
+    }
+}
+
+.srs_hero_sec .srs_hero_content .srs_course_bundle_info{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:24px;
+}
+.srs_hero_sec .srs_hero_content .srs_course_bundle_info div{
+    background: #8FA05D;
+    padding: 5px 16px;
+}
+.srs_hero_sec .srs_hero_content .srs_course_bundle_info p{
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+color: #2B354E;
+}
+.srs_hero_sec .srs_hero_content .srs_course_bundle_info div p{
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+color: #fff;
+}
+.srs_hero_sec .srs_hero_content .srs_tag{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap:24px;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.srs_hero_sec .srs_hero_content .srs_tag li{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    list-style-type: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+color: #2B354E;
+}
+.srs_hero_sec .srs_hero_content .srs_price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 24px;
+}
+.srs_hero_sec .srs_hero_content .srs_price del{
+    font-family: "Outfit", sans-serif;
+font-size: 24px;
+font-weight: 500;
+line-height: 31px;
+letter-spacing: 0em;
+text-align: right;
+color: #2B354E4D;
+
+}
+.srs_hero_sec .srs_hero_content .srs_price p{
+    font-family: "Outfit", sans-serif;
+font-size: 40px;
+font-weight: 700;
+line-height: 52px;
+letter-spacing: 0em;
+text-align: right;
+color: #2B354E;
+}
+
+.srs_hero_sec .srs_hero_content .srs_btn{
+    padding-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+.srs_hero_sec .srs_hero_content .srs_btn a{
+    display: inline-block;
+background:#F5A033;
+padding: 15px 32px;
+font-family: "Inter", sans-serif;
+font-size: 20px;
+font-weight: 600;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+color: #fff;
+text-decoration: none;
+}
+.srs_hero_sec .srs_hero_content .srs_guarantee{
+    margin-top: 12px;
+    font-family: "Inter", sans-serif;;
+font-size: 16px;
+font-weight: 400;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: center;
+color: #717171;
+}
+
+.srs_review_sec{
+    background: linear-gradient(180deg, #8FA05D 0%, rgba(141, 160, 85, 0.7) 100%);
+    padding: 25px 0;
+}
+.srs_review_sec .srs_review_content{
+    max-width: 952.37px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.srs_review_sec .srs_review_content .srs_brand{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+@media (max-width:1024px){
+    .srs_review_sec .srs_review_content{
+        flex-direction: column;
+    }
+    .srs_review_sec .srs_review_content .srs_brand{
+        justify-content: center;
+    }
+    .srs_review_sec .srs_review_content .trustPilot img{
+        width: 100%;
+    }
+}
+.srs_course_overView{
+    padding: 46px 0 15px 0;
+}
+.srs_course_overView .srs_course_overView_content{
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.srs_course_overView .srs_course_overView_content .srs_title{
+    font-family: "Inter", sans-serif;
+font-size: 24px;
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+color: #2B354E;
+padding-bottom: 30px;
+}
+.srs_course_overView .srs_course_overView_content .srs_des{
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+color: #2B354E;
+padding-bottom: 30px;
+}
+@media (max-width:768px){
+    .srs_course_overView .srs_course_overView_content .srs_title{
+font-size: 22px;
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+padding-bottom: 15px;
+    }
+    .srs_course_overView .srs_course_overView_content .srs_des{
+font-size: 10px;
+font-weight: 400;
+line-height:32;
+letter-spacing: 0em;
+text-align: left;
+padding-bottom: 15px;
+    }
+}
+.srs_learning_outcome{
+    padding: 46px 0 15px 0;
+}
+.srs_learning_outcome .srs_learning_outcome_content{
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.srs_learning_outcome .srs_learning_outcome_content .srs_title{
+    font-family: "Inter", sans-serif;
+font-size: 24px;
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+color: #2B354E;
+padding-bottom: 30px;
+}
+.srs_learning_outcome .srs_learning_outcome_content ul{
+    padding-left: 26px;
+}
+.srs_learning_outcome .srs_learning_outcome_content .srs_des{
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 32px;
+letter-spacing: 0em;
+text-align: left;
+color: #2B354E;
+padding-bottom: 10px;
+
+}
+@media (max-width:768px){
+    .srs_learning_outcome .srs_learning_outcome_content .srs_title{
+font-size: 22px;
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+    }
+    .srs_learning_outcome .srs_learning_outcome_content .srs_des{
+font-size: 10px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: left;
+padding-bottom: 15px;
+    }
+}
+.srs_description_sec{
+    padding: 46px 0 15px 0;
+}
+.srs_description_sec .srs_description_content{
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.srs_description_sec .srs_description_content .srs_title{
+    font-family: "Inter", sans-serif;
+font-size: 24px;
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+color: #2B354E;
+padding-bottom: 30px;
+}
+.srs_description_sec .srs_description_content .srs_des{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 13px;
+        }
