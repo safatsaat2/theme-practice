@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .srs_calculate_parent {
+        max-width: 1216px;
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: -3.963286876678467px 38.04755401611328px 30.43804359436035px
+          0px #00000026;
+      }
+      .srs_calculate_parent .srs_title_sec {
+        background: #7ba631;
+        border-radius: 16px 16px 0px 0px;
+        padding: 22px;
+      }
+      .srs_calculate_parent .srs_title_sec .srs_title {
+        font-family: "Roboto", sans-serif;
+        font-size: 38px !important;
+        font-weight: 500;
+        line-height: 45px !important;
+        letter-spacing: 0em;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+      }
+      .srs_calculate_parent .srs_all_input {
+        padding: 75px 120px;
+        background: #fcfff6;
+      }
+      .srs_calculate_parent .srs_all_input .srs_cus_sec .srs_cus_title {
+        font-family: "Roboto", sans-serif;
+        font-size: 25px !important;
+        font-weight: 500;
+        line-height: 30px !important;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #151424;
+        margin: 0;
+        margin-bottom: 14px;
+      }
+      .srs_calculate_parent .srs_Customer_sec input[type="range"],
+      .srs_calculate_parent .srs_Customer_sec input[type="range"]:focus {
+        -webkit-appearance: none;
+        background-size: 20% 100%;
+        /* background: #fff linear-gradient(#7BA631,#7BA631) no-repeat; */
+        border: 1px solid #e7e9f1;
+        border-radius: 10px;
+        height: 12px;
+        margin-bottom: 10px;
+        vertical-align: middle;
+        width: 100%;
+      }
+      .srs_calculate_parent .srs_Customer_sec {
+        margin-bottom: 25px;
+      }
+      .srs_calculate_parent .srs_Customer_sec label {
+        display: inline-block;
+        font-family: "Popins", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 19px;
+      }
+      .srs_calculate_parent .srs_Customer_sec span {
+        color: #7ba631;
+        font-family: "Popins", sans-serif;
+        font-size: 18px;
+      }
+      .srs_calculate_parent .srs_Customer_sec .srs_input_inline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+      .srs_calculate_parent .srs_Customer_sec .cus_num {
+        margin-left: 0px;
+        background: #7ba631;
+        color: #fff;
+        padding: 7px 38px 8px;
+        border-radius: 50px;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+      .srs_calculate_parent .srs_Customer_sec .cus_num::after {
+        border-style: solid;
+        border-width: 0 8px 8px;
+        border-color: transparent transparent #7ba631 transparent;
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 48%;
+        transform: rotate(180deg);
+      }
+      .srs_calculate_parent
+        .srs_Customer_sec
+        input[type="range"]::-webkit-slider-thumb {
+        background: #7ba631;
+        border-radius: 50%;
+        width: 28px;
+        aspect-ratio: 1;
+        -webkit-appearance: none;
+        appearance: none;
+        border: 6px solid #fff;
+      }
+      .srs_calculate_parent .srs_Customer_sec .srs_input_inline .srs_cus_min {
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4f5a61;
+      }
+      .srs_calculate_parent .srs_Customer_sec .srs_input_inline #input {
+        border: none;
+        border-top: 1.52px solid #7ba63140;
+        height: 16px;
+      }
+      .srs_calculate_parent .srs_Customer_sec .srs_input_inline .srs_cus_max {
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4f5a61;
+      }
+
+      .srs_calculate_parent .srs_all_input .srs_charge_sec_pr {
+        margin-top: 73px;
+      }
+
+      .srs_calculate_parent
+        .srs_all_input
+        .srs_charge_sec_pr
+        .srs_charge_title {
+        font-family: "Roboto", sans-serif;
+        font-size: 25px !important;
+        font-weight: 500;
+        line-height: 30px !important;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #151424;
+        margin: 0;
+        margin-bottom: 14px;
+      }
+      .srs_calculate_parent .srs_charge_sec input[type="range"],
+      .srs_calculate_parent .srs_charge_sec input[type="range"]:focus {
+        -webkit-appearance: none;
+        background-size: 20% 100%;
+        /* background: #fff linear-gradient(#7BA631,#7BA631) no-repeat; */
+        border: 1px solid #e7e9f1;
+        border-radius: 10px;
+        height: 12px;
+        margin-bottom: 10px;
+        vertical-align: middle;
+        width: 100%;
+      }
+      .srs_calculate_parent .srs_charge_sec label {
+        display: inline-block;
+        font-family: "Popins", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 19px;
+      }
+      .srs_calculate_parent .srs_charge_sec span {
+        color: #7ba631;
+        font-family: "Popins", sans-serif;
+        font-size: 18px;
+      }
+      .srs_calculate_parent .srs_charge_sec .srs_input_inline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+      .srs_calculate_parent .srs_charge_sec .charge_num2 {
+        margin-left: 0px;
+        background: #7ba631;
+        color: #fff;
+        padding: 7px 38px 8px;
+        border-radius: 50px;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .srs_calculate_parent .srs_charge_sec .charge_num2::after {
+        border-style: solid;
+        border-width: 0 8px 8px;
+        border-color: transparent transparent #7ba631 transparent;
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 48%;
+        transform: rotate(180deg);
+      }
+      .srs_calculate_parent
+        .srs_charge_sec
+        input[type="range"]::-webkit-slider-thumb {
+        background: #7ba631;
+        border-radius: 50%;
+        width: 28px;
+        aspect-ratio: 1;
+        -webkit-appearance: none;
+        appearance: none;
+        border: 6px solid #fff;
+      }
+      .srs_calculate_parent .srs_charge_sec .srs_input_inline .srs_charge_min {
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4f5a61;
+      }
+      .srs_calculate_parent .srs_charge_sec .srs_input_inline #input2 {
+        border: none;
+        border-top: 1.52px solid #7ba63140;
+        height: 16px;
+      }
+      .srs_calculate_parent .srs_charge_sec .srs_input_inline .srs_charge_max {
+        font-family: "Roboto", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4f5a61;
+      }
+      .srs_calculate_parent .srs_total_sec {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1.52px solid #dee9cb;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_dynamic_commission {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_dynamic_commission p {
+        margin: 0;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_your_take p {
+        margin: 0;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_annual_income p {
+        margin: 0;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_your_take {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+        border-left: 1.52px solid #dee9cb;
+        border-right: 1.52px solid #dee9cb;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_annual_income {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+      }
+      .srs_calculate_parent
+        .srs_total_sec
+        .srs_dynamic_commission
+        .srs_commission_title {
+        font-family: "Roboto", sans-serif;
+        font-size: 19px !important;
+        font-weight: 500;
+        line-height: 22px !important;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4f5a61;
+      }
+      .srs_calculate_parent
+        .srs_total_sec
+        .srs_dynamic_commission
+        .srs_commission_price {
+        font-family: "Roboto", sans-serif;
+        font-size: 38px !important;
+        font-weight: 700;
+        line-height: 45px !important;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-top: 12px;
+        color: #7ba631;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_your_take .srs_take_title {
+        font-family: "Roboto", sans-serif;
+        font-size: 19px !important;
+        font-weight: 500;
+        line-height: 22px !important;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4f5a61;
+      }
+      .srs_calculate_parent .srs_total_sec .srs_your_take .srs_take_price {
+        font-family: "Roboto", sans-serif;
+        font-size: 38px !important;
+        font-weight: 700;
+        line-height: 45px !important;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-top: 12px;
+        color: #7ba631;
+      }
+      .srs_calculate_parent
+        .srs_total_sec
+        .srs_annual_income
+        .srs_annual_income_title {
+        font-family: "Roboto", sans-serif;
+        font-size: 19px !important;
+        font-weight: 500;
+        line-height: 22px !important;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4f5a61;
+      }
+      .srs_calculate_parent
+        .srs_total_sec
+        .srs_annual_income
+        .srs_annual_income_price {
+        font-family: "Roboto", sans-serif;
+        font-size: 38px !important;
+        font-weight: 700;
+        line-height: 45px !important;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-top: 12px;
+        color: #7ba631;
+      }
+
+      .srs_calculate_parent .srs_button_sec {
+        display: flex;
+        justify-content: space-between;
+      }
+      .srs_calculate_parent .srs_button_sec .srs_condtion_sec {
+        background: #8d967d;
+        flex-basis: 66%;
+        border-bottom-left-radius: 16px;
+        padding: 39px 0 39px 109px;
+      }
+      .srs_calculate_parent .srs_button_sec .srs_condtion_sec p {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #fff;
+      }
+      .srs_calculate_parent
+        .srs_button_sec
+        .srs_condtion_sec
+        .srs_title_dynamic {
+        font-weight: 470;
+        font-style: normal;
+        margin-bottom: 12px;
+      }
+      .srs_calculate_parent .srs_button_sec .srs_button_get {
+        background: #4f5a61;
+        flex-basis: 38%;
+        border-bottom-right-radius: 16px;
+      }
+      .srs_calculate_parent .srs_button_sec .srs_button_get a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      @media (max-width: 767px) {
+        .srs_calculate_parent .srs_title_sec .srs_title {
+          font-size: 24px !important;
+          line-height: 32px !important;
+        }
+        .srs_calculate_parent .srs_all_input {
+          padding: 30px 20px;
+        }
+        .srs_calculate_parent .srs_all_input .srs_cus_sec .srs_cus_title {
+          font-size: 16px !important;
+        }
+        .srs_calculate_parent .srs_Customer_sec .cus_num {
+          font-size: 14px;
+          padding: 2px 20px;
+          margin-bottom: 10px;
+        }
+        .srs_calculate_parent .srs_Customer_sec .srs_input_inline {
+          gap: 2px;
+          align-items: center;
+        }
+        .srs_calculate_parent .srs_Customer_sec .srs_input_inline .srs_cus_min {
+          font-size: 14px;
+          line-height: 21px;
+        }
+        .srs_calculate_parent .srs_Customer_sec .srs_input_inline .srs_cus_max {
+          font-size: 14px;
+          line-height: 21px;
+        }
+
+        .srs_calculate_parent
+          .srs_all_input
+          .srs_charge_sec_pr
+          .srs_charge_title {
+          font-size: 16px !important;
+        }
+        .srs_calculate_parent .srs_charge_sec_pr .charge_num2 {
+          font-size: 14px;
+          padding: 2px 20px;
+          margin-bottom: 10px;
+        }
+        .srs_calculate_parent .srs_charge_sec_pr .srs_input_inline {
+          gap: 2px;
+          align-items: center;
+        }
+        .srs_calculate_parent
+          .srs_charge_sec_pr
+          .srs_input_inline
+          .srs_charge_min {
+          font-size: 14px;
+          line-height: 21px;
+        }
+        .srs_calculate_parent
+          .srs_charge_sec_pr
+          .srs_input_inline
+          .srs_charge_max {
+          font-size: 14px;
+          line-height: 21px;
+        }
+        .srs_calculate_parent .srs_total_sec {
+          flex-direction: column;
+        }
+        .srs_calculate_parent .srs_total_sec .srs_your_take {
+          border: none;
+          border-top: 1.52px solid #dee9cb;
+          border-bottom: 1.52px solid #dee9cb;
+        }
+        .srs_calculate_parent .srs_button_sec {
+          flex-direction: column;
+        }
+        .srs_calculate_parent .srs_button_sec .srs_condtion_sec {
+          padding: 20px;
+          border-radius: 0;
+        }
+        .srs_calculate_parent .srs_button_sec .srs_button_get {
+          padding: 10px;
+          border-radius: 0;
+          border-bottom-right-radius: 16px;
+          border-bottom-left-radius: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="srs_calculate_parent">
+      <div class="srs_title_sec">
+        <p class="srs_title">Calculate how much you can earn with Janets</p>
+      </div>
+      <div class="srs_all_input">
+        <div class="srs_cus_sec">
+          <p class="srs_cus_title">How many customers will you have?</p>
+          <div class="srs_Customer_sec">
+            <label for="Customer" class="cus_num">50</label>
+            <div class="srs_input_inline">
+              <span class="srs_cus_min"> 50 </span>
+              <input
+                name="Customer"
+                oninput="changeCustomer()"
+                id="input"
+                type="range"
+                max="500"
+                min="50"
+                value="50"
+              />
+              <span class="srs_cus_max"> 500 </span>
+            </div>
+          </div>
+        </div>
+        <div class="srs_charge_sec_pr">
+          <p class="srs_charge_title">
+            What will you charge for each customer?
+          </p>
+          <div class="srs_charge_sec">
+            <label for="Charge" class="charge_num2">10</label>
+            <div class="srs_input_inline">
+              <span class="srs_charge_min"> 10 </span>
+              <input
+                name="Charge"
+                oninput="changeCharge()"
+                id="input2"
+                type="range"
+                max="25"
+                min="10"
+                value="10"
+              />
+              <span class="srs_charge_max"> 25 </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="srs_total_sec">
+        <div class="srs_dynamic_commission">
+          <p class="srs_commission_title">Dynamic Commission</p>
+          <p class="srs_commission_price">£8</p>
+        </div>
+        <div class="srs_your_take">
+          <p class="srs_take_title">Your Take</p>
+          <p class="srs_take_price">£100</p>
+        </div>
+        <div class="srs_annual_income">
+          <p class="srs_annual_income_title">Your Annual income will be</p>
+          <p class="srs_annual_income_price">£1200</p>
+        </div>
+      </div>
+      <div class="srs_button_sec">
+        <div class="srs_condtion_sec">
+          <p class="srs_title_dynamic">*Dynamic Commission</p>
+          <p>1. For 50-100 customers, Janets will charge £8 per customer</p>
+          <p>2. And for 100+ customers, Janets will charge £6 per customer</p>
+        </div>
+        <div class="srs_button_get">
+          <a href="#"> Get Started </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let cus_number = 50;
+      let cost = 10;
+      const dynamicCom = document.querySelector(".srs_commission_price");
+      const yourTake = document.querySelector(".srs_take_price");
+      const annualIncome = document.querySelector(".srs_annual_income_price");
+
+      function change(inputId, labelClass, minValue, maxValue, isCharge) {
+        const label = document.querySelector(labelClass);
+        const input = document.getElementById(inputId);
+        const value = input.value;
+        const min = parseInt(input.min);
+        const max = parseInt(input.max);
+        const offsetWidth = input.offsetWidth;
+
+        input.style.background =
+          "#fff linear-gradient(#7BA631,#7BA631) no-repeat";
+        const backgroundSize = ((value - min) / (max - min)) * 100 + "% 100%";
+        input.style.backgroundSize = backgroundSize;
+
+        const percent = ((value - min) / (max - min)) * 100;
+        const newPosition = percent * (offsetWidth / 100);
+        label.style.transform = `translateX(${newPosition}px)`;
+
+        if ((isCharge && value >= 15) || (!isCharge && value >= 350)) {
+          label.style.marginLeft = "-40px";
+        } else {
+          label.style.marginLeft = "-0px";
+        }
+
+        label.textContent = value;
+        totalfn();
+      }
+
+      function changeCustomer() {
+        change("input", ".cus_num", 50, 500, false);
+      }
+
+      function changeCharge() {
+        change("input2", ".charge_num2", 10, 25, true);
+      }
+
+      function totalfn() {
+        const commission = cus_number > 100 ? 6 : 8;
+        const plus = cost - commission;
+        const takeNum = cus_number * plus;
+
+        dynamicCom.textContent = `£${commission}`;
+        yourTake.textContent = `£${takeNum}`;
+        annualIncome.textContent = `£${takeNum * 12}`;
+      }
+
+      // Initial calculation
+      totalfn();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .srs_calculate_box .srs_Customer_sec input[type=range], .srs_calculate_box .srs_Customer_sec input[type=range]:focus{
+            -webkit-appearance: none;
+    background-size: 20% 100%;
+    /* background: #fff linear-gradient(#7BA631,#7BA631) no-repeat; */
+    border: 1px solid #e7e9f1;
+    border-radius: 10px;
+    height: 12px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    width: 100%;
+        }
+        .srs_calculate_box {
+    background: #fff;
+    border: 1px solid #e0e3ec;
+    border-radius: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.03);
+    padding: 42px;
+    position: relative;
+}
+.srs_calculate_box .srs_Customer_sec{
+    margin-bottom: 25px;
+}
+.srs_calculate_box .srs_Customer_sec label {
+    display: inline-block;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 19px;
+}
+.srs_calculate_box .srs_Customer_sec span {
+    color: #7BA631;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+}
+.srs_calculate_box .srs_Price_sec input[type=range]::-webkit-slider-thumb{
+    background: #7BA631;
+	border-radius: 50%;
+	width: 28px;
+	aspect-ratio: 1;
+	-webkit-appearance: none;
+	appearance: none;
+	border:8px solid #fff
+}
+.srs_calculate_box .srs_Price_sec input[type=range], .srs_calculate_box .srs_Price_sec input[type=range]:focus{
+            -webkit-appearance: none;
+    background-size: 20% 100%;
+    /* background: #fff linear-gradient(#7BA631,#7BA631) no-repeat; */
+    border: 1px solid #e7e9f1;
+    border-radius: 10px;
+    height: 12px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    width: 100%;
+        }
+.srs_calculate_box .srs_Price_sec label {
+    display: inline-block;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 19px;
+}
+.srs_calculate_box .srs_Price_sec span {
+    color: #7BA631;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+}
+.srs_calculate_box .srs_Commission_sec{
+    margin-top: 25px;
+}
+.srs_calculate_box .srs_Commission_sec input[type=range], .srs_calculate_box .srs_Commission_sec input[type=range]:focus{
+            -webkit-appearance: none;
+    background-size: 20% 100%;
+    /* background: #fff linear-gradient(#7BA631,#7BA631) no-repeat; */
+    border: 1px solid #e7e9f1;
+    border-radius: 10px;
+    height: 12px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    width: 100%;
+        }
+.srs_calculate_box .srs_Commission_sec label {
+    display: inline-block;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 19px;
+}
+.srs_calculate_box .srs_Commission_sec span {
+    color: #7BA631;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+}
+.srs_calculate_box .srs_total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.srs_calculate_box .srs_total p{
+    color: #7BA631;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+.srs_calculate_box .srs_total h3{
+    margin: 0;
+    font-family: "Popins", sans-serif;
+    color: #7BA631;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 31px;
+
+}
+    </style>
+</head>
+<body>
+    <form class="srs_calculate_box">
+        <div class="srs_Customer_sec">
+            <label for="Customer" class="cus_num">50</label>
+            
+            <input name="Customer" oninput='change()' id="input" type="range" max="1000" min="50" value="50" >
+        <span class="srs_cus">
+            0
+        </span>
+        </div>
+        <div class="srs_Price_sec">
+            <label for="Price">What will you charge for what you create?</label>
+            <input name="Price" oninput='change2()' id="input2" type="range" max="1000" min="0" value="0" >
+            <span>
+                $
+            </span>
+        <span class="srs_price">
+            0
+        </span>
+        <span>/month</span>
+        </div>
+        <div class="srs_Commission_sec">
+            <label for="Commission">Commission</label>
+            <input name="Commission" oninput='change3()' id="input3" type="range" max="1000" min="0" value="0" >
+            
+        <span class="srs_Commission">
+            0
+        </span>
+        
+        </div>
+        <div class="srs_total">
+            <p>
+                Annual Income
+            </p>
+            <h3>
+                <span>$</span>
+                <span class="srs_total_amount">0</span>
+            </h3>
+        </div>
+
+
+        
+    </form>
+
+
+    <script>
+
+function change(){
+    const cus_label = document.getElementsByClassName("cus_num")[0];
+    let value = document.getElementById("input").value;
+    let min = parseInt(document.getElementById("input").min);
+    let max = parseInt(document.getElementById("input").max);
+    let offsetWidth = document.getElementById("input").offsetWidth;
+    document.getElementsByClassName("srs_cus")[0].innerHTML = value;
+    document.getElementById("input").style.background = "#fff linear-gradient(#7BA631,#7BA631) no-repeat";
+
+    // Calculate the background size directly based on the value's position between min and max
+    let backgroundSize = ((value - min) / (max - min)) * 100 + "% 100%";
+    document.getElementById("input").style.backgroundSize = backgroundSize;
+
+    const percent = (value - min) / (max - min) * 100;
+    const newPosition = percent * (offsetWidth / 100) - 20;
+    cus_label.style.transform = `translateX(${newPosition}px)`;
+    cus_label.textContent = value;
+}
+        function change2(){
+            let  value = document.getElementById("input2").value;
+        document.getElementsByClassName("srs_price")[0].innerHTML = value;
+        document.getElementById("input2").style.background = "#fff linear-gradient(#7BA631,#7BA631) no-repeat"
+        let backgroundSize = value / 10 + "% 100%"; // Scale the value to adjust background size (0-100)
+            document.getElementById("input2").style.backgroundSize = backgroundSize;
+            
+        }
+        function change3(){
+            let  value = document.getElementById("input3").value;
+        document.getElementsByClassName("srs_Commission")[0].innerHTML = value;
+        document.getElementById("input3").style.background = "#fff linear-gradient(#7BA631,#7BA631) no-repeat"
+        let backgroundSize = value / 10 + "% 100%"; // Scale the value to adjust background size (0-100)
+            document.getElementById("input3").style.backgroundSize = backgroundSize;
+            
+        }
+        
+    </script>
+</body>
+</html>

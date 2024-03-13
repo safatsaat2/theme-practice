@@ -1,0 +1,131 @@
+function change2() {
+    const cus_label = document.getElementsByClassName("charge_num2")[0];
+    let value = document.getElementById("input2").value;
+    let min = parseInt(document.getElementById("input2").min);
+    let max = parseInt(document.getElementById("input2").max);
+    let offsetWidth = document.getElementById("input2").offsetWidth;
+    // document.getElementsByClassName("srs_cus")[0].innerHTML = value;
+    document.getElementById("input2").style.background =
+      "#fff linear-gradient(#7BA631,#7BA631) no-repeat";
+    console.log(value);
+    // Calculate the background size directly based on the value's position between min and max
+    let backgroundSize = ((value - min) / (max - min)) * 100 + "% 100%";
+    document.getElementById("input2").style.backgroundSize = backgroundSize;
+
+    const percent = ((value - min) / (max - min)) * 100;
+    const newPosition = percent * (offsetWidth / 100);
+    cus_label.style.transform = `translateX(${newPosition}px)`;
+    if (value >= 750) {
+      cus_label.style.marginLeft = "-40px";
+    } else {
+      cus_label.style.marginLeft = "-20px";
+    }
+    cus_label.textContent = value;
+  }
+
+
+
+  
+  .srs_calculate_parent .srs_all_input .srs_charge_sec .srs_charge_title {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #151424;
+    margin: 0;
+    margin-bottom: 14px;
+  }
+  .srs_calculate_parent .srs_charge_sec input[type="range"],
+  .srs_calculate_parent .srs_charge_sec input[type="range"]:focus {
+    -webkit-appearance: none;
+    background-size: 20% 100%;
+    /* background: #fff linear-gradient(#7BA631,#7BA631) no-repeat; */
+    border: 1px solid #e7e9f1;
+    border-radius: 10px;
+    height: 12px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  .srs_calculate_parent .srs_charge_sec {
+    margin-bottom: 25px;
+  }
+  .srs_calculate_parent .srs_charge_sec label {
+    display: inline-block;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 19px;
+  }
+  .srs_calculate_parent .srs_charge_sec span {
+    color: #7ba631;
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+  }
+  .srs_calculate_parent .srs_charge_sec .srs_input_inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .srs_calculate_parent .srs_charge_sec .cus_num {
+    margin-left: 0px;
+    background: #7ba631;
+    color: #fff;
+    padding: 7px 38px 8px;
+    border-radius: 50px;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .srs_calculate_parent .srs_charge_sec .cus_num::after {
+    border-style: solid;
+    border-width: 0 8px 8px;
+    border-color: transparent transparent #7ba631 transparent;
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 48%;
+    transform: rotate(180deg);
+  }
+  .srs_calculate_parent
+    .srs_charge_sec
+    input[type="range"]::-webkit-slider-thumb {
+    background: #7ba631;
+    border-radius: 50%;
+    width: 28px;
+    aspect-ratio: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 6px solid #fff;
+  }
+  .srs_calculate_parent .srs_charge_sec .srs_input_inline .srs_charge_min {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #4f5a61;
+  }
+  .srs_calculate_parent .srs_charge_sec .srs_input_inline #input2{
+    border: none;
+    border-top: 1.52px solid #7BA63140;
+    height: 16px;
+
+  }
+  .srs_calculate_parent .srs_charge_sec .srs_input_inline .srs_charge_max {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #4f5a61;
+  }
